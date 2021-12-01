@@ -9,3 +9,5 @@
 # https://drive.google.com/drive/folders/1vICarPIiRxa65pItqwBEwvMD_tlf0xQw?usp=sharing
 
 print('fork test')
+
+print('되는건가요 안되는건가요???? ㅠㅠ jj')
