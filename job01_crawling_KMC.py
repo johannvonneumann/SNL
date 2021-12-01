@@ -24,4 +24,3 @@ for page_number in range(1, 38):
             print(title)
         except Exception as E:
             print(f'Unknown error occurred..\nError: {E}')
-    print(len(title))
