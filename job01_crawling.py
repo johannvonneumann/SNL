@@ -12,3 +12,5 @@ print('fork test HHH')
 
 ###practice1
 ###practice2
+###benchpress
+###jiu_ji_tsu
