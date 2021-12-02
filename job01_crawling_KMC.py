@@ -14,10 +14,10 @@ driver = webdriver.Chrome('./chromedriver', options=options)
 review_button_xpath = '//*[@id="movieEndTabMenu"]/li[6]/a/em'
 review_number_xpath = '//*[@id="reviewTab"]/div/div/div[2]/span/em'
 try:
-    for i in range(1, 38):
+    for i in range(1, 60):
         titles = []
         reviews = []
-        url = f'https://movie.naver.com/movie/sdb/browsing/bmovie.naver?open=2020&page={i}'
+        url = f'https://movie.naver.com/movie/sdb/browsing/bmovie.naver?open=2016&page={i}'
         for j in range(1, 21):
             print(j+((i - 1) * 20), '번째 영화 크롤링 중')
             try:
@@ -51,7 +51,7 @@ try:
             except Exception as E:
                 print('error', E)
         df_review_20 = pd.DataFrame({'title': titles, 'reviews': reviews})
-        df_review_20.to_csv(f'./crawling_data/reviews_{2020}_{i}.csv', index=False)
+        df_review_20.to_csv(f'./crawling_data/reviews_{2016}_{i}.csv', index=False)
 except Exception as E:
     print('totally error', E)
 finally:
