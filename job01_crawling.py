@@ -7,3 +7,4 @@
 # 파일명은 reviews_0000.csv로 해주세요. 0000은 해당 연도입니다.
 # 크롤링한 데이터 파일은 아래 링크로 올려주세요.
 # https://drive.google.com/drive/folders/1vICarPIiRxa65pItqwBEwvMD_tlf0xQw?usp=sharing
+

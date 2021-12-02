@@ -5,12 +5,17 @@ import time
 
 
 options = webdriver.ChromeOptions()
+<<<<<<< HEAD
 # options.add_argument('headless')        # Web-browser가 뜨지 않는다.
+=======
+# options.add_argument('headless')    # Web-browser가 열리지 않게 해주는 설정
+>>>>>>> origin/main
 options.add_argument('lang=ko_KR')
 options.add_argument('disable_gpu')
 
 driver = webdriver.Chrome('./chromedriver', options=options)
 
+<<<<<<< HEAD
 review_button_xpath = '//*[@id="movieEndTabMenu"]/li[6]/a/em'
 review_number_xpath = '//*[@id="reviewTab"]/div/div/div[2]/span/em'
 try:
@@ -59,3 +64,18 @@ finally:
 
 # df_review = pd.DataFrame({'title': titles, 'reviews': reviews})
 # df_review.to_csv(f'./crawling_data/reviews_{2020}.csv')
+=======
+titles = []
+reviews = []
+
+for page_number in range(1, 38):
+    url = f'https://movie.naver.com/movie/sdb/browsing/bmovie.naver?open=2020&page={page_number}'
+    driver.get(url)
+    for title_number in range(1, 21):
+        try:
+            movie_title_xpath = f'//*[@id="old_content"]/ul/li[{title_number}]/a'
+            title = driver.find_element_by_xpath(movie_title_xpath).text
+            print(title)
+        except Exception as E:
+            print(f'Unknown error occurred..\nError: {E}')
+>>>>>>> origin/main
