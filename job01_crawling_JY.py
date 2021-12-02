@@ -30,8 +30,8 @@ review_number_xpath = '//*[@id="reviewTab"]/div/div/div[2]/span/em'
 
 
 try:
-    for i in range(1, 38):
-        url = 'https://movie.naver.com/movie/sdb/browsing/bmovie.naver?open=2020&page={}'.format(i)
+    for i in range(1, 51):
+        url = 'https://movie.naver.com/movie/sdb/browsing/bmovie.naver?open=2018&page={}'.format(i)
         titles = []
         reviews = []
         for j in range(1, 21):
@@ -70,7 +70,7 @@ try:
             except:
                 print('error')
         df_review_20 = pd.DataFrame({'title':titles, 'reviews':reviews})
-        df_review_20.to_csv('./crawling_data/reviews_{}_{}.csv'.format(2020, i))
+        df_review_20.to_csv('./crawling_data/reviews_{}_{}.csv'.format(2018, i))
 
 except:
     print('totally error')
