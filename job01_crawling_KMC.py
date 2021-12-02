@@ -6,7 +6,6 @@ import time
 
 options = webdriver.ChromeOptions()
 # options.add_argument('headless')        # Web-browser가 뜨지 않는다.
-# options.add_argument('headless')    # Web-browser가 열리지 않게 해주는 설정
 options.add_argument('lang=ko_KR')
 options.add_argument('disable_gpu')
 
