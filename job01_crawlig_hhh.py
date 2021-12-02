@@ -25,7 +25,7 @@ driver = webdriver.Chrome('./chromedriver', options=options)
 review_number_xpath = '//*[@id="reviewTab"]/div/div/div[2]/span/em'
 review_button_xpath = '//*[@id="movieEndTabMenu"]/li[6]/a'
 try:
-    for i in range(1,38):
+    for i in range(22,38):
         url = 'https://movie.naver.com/movie/sdb/browsing/bmovie.naver?open=2020&page={}'.format(i)
         titles = []
         reviews = []
