@@ -20,7 +20,7 @@
 # https://drive.google.com/drive/folders/1JprpPHRpmA4rdd115VRnbp_42c5Vsofw
 # 더 이상 혼나기 싫어요.. ㅠ
 
-# 2021-12-03
+# 2021-12-02  17:20 추가
 # 리뷰를 가져오는 과정에서 '리뷰 버튼'의 xpath 에 대한 이슈가 있습니다.
 # 예시 1: https://movie.naver.com/movie/bi/mi/basic.naver?code=141789
 # 예시 2: https://movie.naver.com/movie/bi/mi/basic.naver?code=145739
@@ -28,7 +28,8 @@
 # 예시 2번의 경우 //*[@id="movieEndTabMenu"]/li[5]/a/em 가 되어 비정상적인 접근을 하게됩니다.
 # 즉, 리뷰가 아니라 다른 경로로 접근하여 크롤링을 진행하려다 보니 에러가 발생합니다.
 # 이슈를 해결하기위해 코드 수정이 필요합니다. 이슈 해결을 위해 다같이 방법을 찾아봅시다.
-# 20:20 트레이스백(Traceback)을 위한 에러 디버그 및 파일 출력 코드 추가
-# 23:28 리뷰 문제 해결 완료.
+
+# 2021-12-02  23:29 추가
+# 트레이스백(Traceback)을 위한 에러 디버그 및 파일 출력 코드 추가
 # 원하시는 경우, job01_crawling_KMC-1.py의 내용을 복사하여 본인이 작업하고 있던 .py에 붙여넣기 하시면 됩니다
 # 113번 라인에서 crawlData의 매개변수인 year에 본인이 크롤링해야하는 연도를 문자열형태로 적어주면 알아서 합니다.
