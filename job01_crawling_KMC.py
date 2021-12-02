@@ -21,6 +21,7 @@ try:
         for j in range(1, 21):
             print(j+((i - 1) * 20), '번째 영화 크롤링 중')
             try:
+
                 driver.get(url)
                 movie_title_xpath = f'//*[@id="old_content"]/ul/li[{j}]/a'
                 title = driver.find_element_by_xpath(movie_title_xpath).text
