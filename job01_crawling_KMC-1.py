@@ -7,7 +7,9 @@ import time
 
 def initializeDriverOptions():
     options = webdriver.ChromeOptions()
-    # options.add_argument('headless')        # Web-browser가 뜨지 않는다.
+    options.add_argument('headless')        # Web-browser가 뜨지 않는다.
+    options.add_argument('window-size=1920x1080')
+    options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36')
     options.add_argument('lang=ko_KR')
     options.add_argument('disable_gpu')
 
@@ -40,8 +42,9 @@ def crawlData(driver, year):
     movie_pages = int(items) // 20 + 2
     count = 0
     # 해당 연도의 영화 페이지로 이동
-    try:
-        for i in range(1, movie_pages):
+
+    for i in range(1, movie_pages):
+        try:
             url = f'https://movie.naver.com/movie/sdb/browsing/bmovie.naver?open={year}&page={i}'
             driver.get(url)
             time.sleep(0.2)
@@ -98,10 +101,10 @@ def crawlData(driver, year):
             df_review_20 = pd.DataFrame({'titles': titles, 'reviews': reviews})
             df_review_20.to_csv(f'./crawling_data/reviews_{year}_{i}.csv', index=False)
             print(f'"reviews_{year}_{i}.csv" is saved.')
-    except Exception as E:
-        print(f'Unknown error occurred..\n{E}')
-        with open(f'./{traceback_filename}', 'a') as f:
-            f.write(f'Unknown error occurred..\n{E}\n')
+        except Exception as E:
+            print(f'Unknown error occurred..\n{E}')
+            with open(f'./{traceback_filename}', 'a') as f:
+                f.write(f'Unknown error occurred..\n{E}\n')
 
     time.sleep(3)
     driver.close()
